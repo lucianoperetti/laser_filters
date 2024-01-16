@@ -177,6 +177,7 @@ class LaserScanBoxFilter : public filters::FilterBase<sensor_msgs::msg::LaserSca
         !(iter_z != iter_z.end()))
       {
         RCLCPP_INFO_THROTTLE(get_logger(), steady_clock, .3, "x, y, z and index fields are required, skipping scan");
+        return false;
       }
 
     for (;
